@@ -1,4 +1,9 @@
 * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
   background: #f2f2ce;
   background: linear-gradient(
     90deg,
@@ -6,9 +11,8 @@
     rgba(242, 242, 199, 1) 51%,
     rgba(247, 247, 213, 1) 100%
   );
-  box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
+  color: #1b1f1b;
+  font-family: "Courier New", Courier, monospace;
   text-align: center;
 }
 h1 {
@@ -72,70 +76,54 @@ img {
 }
 .stock {
   display: flex;
+  justify-content: center;
   gap: 30px;
-  margin-left: 50px;
+  margin: 30px auto 0;
+  max-width: 980px;
 }
 .stocking {
   display: flex;
+  justify-content: center;
   gap: 30px;
-  margin-left: 50px;
+  margin: 18px auto 0;
+  max-width: 980px;
 }
-.stock1 {
-  border: 2px solid black;
-  width: 400px;
-  margin-top: 30px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 8px gray;
-}
-.stock1 h2 {
-  font-size: 40px;
-  font-family: "Courier New", Courier, monospace;
-}
-.stock2 h2 {
-  font-size: 40px;
-  font-family: "Courier New", Courier, monospace;
-}
-.stock3 h2 {
-  font-size: 40px;
-  font-family: "Courier New", Courier, monospace;
-}
-.stock4 h2 {
-  font-size: 40px;
-  font-family: "Courier New", Courier, monospace;
-}
-.stock2 {
-  border: 2px solid black;
-  width: 400px;
-  margin-top: 30px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 8px gray;
-}
-.stock3 {
-  border: 2px solid black;
-  width: 400px;
-  margin-top: 30px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 8px gray;
-}
+.stock1,
+.stock2,
+.stock3,
 .stock4 {
-  border: 2px solid black;
-  width: 400px;
-  margin-top: 30px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 8px gray;
+  border: 2px solid #2f2f2f;
+  width: min(320px, 42vw);
+  min-height: 130px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
+.stock1 h2,
+.stock2 h2,
+.stock3 h2,
+.stock4 h2 {
+  margin: 0;
+  font-size: 40px;
+  font-family: "Courier New", Courier, monospace;
+  background: transparent;
+}
+
 .h2_24 {
-  background: white;
-  margin-left: 20px;
+  background: transparent;
   font-size: 35px;
 }
+
 .i_inStock {
-  background: white;
-  margin-left: 20px;
+  margin: 8px 0 0;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 700;
 }
 .inventory {
   margin: 50px auto 0;
@@ -328,9 +316,40 @@ img {
   transform: translateY(-1px);
 }
 
+.top-summary {
+  max-width: 980px;
+  margin: 26px auto 0;
+}
+
+.footer {
+  margin-top: 26px;
+  padding: 18px 20px 28px;
+  border-top: 2px solid rgba(47, 47, 47, 0.25);
+  color: #2d2f2a;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+
+.footer small {
+  font-weight: 700;
+}
+
 @media (max-width: 840px) {
   .inventory-grid {
     grid-template-columns: 1fr;
+  }
+
+  .stock,
+  .stocking {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stock1,
+  .stock2,
+  .stock3,
+  .stock4 {
+    width: min(420px, 82vw);
   }
 }
 
