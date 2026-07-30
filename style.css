@@ -88,6 +88,22 @@ img {
   border-radius: 10px;
   box-shadow: 0 0 8px gray;
 }
+.stock1 h2 {
+  font-size: 40px;
+  font-family: "Courier New", Courier, monospace;
+}
+.stock2 h2 {
+  font-size: 40px;
+  font-family: "Courier New", Courier, monospace;
+}
+.stock3 h2 {
+  font-size: 40px;
+  font-family: "Courier New", Courier, monospace;
+}
+.stock4 h2 {
+  font-size: 40px;
+  font-family: "Courier New", Courier, monospace;
+}
 .stock2 {
   border: 2px solid black;
   width: 400px;
@@ -122,65 +138,218 @@ img {
   margin-left: 20px;
 }
 .inventory {
-  padding-top: 50px;
-  height: 1200px;
-  border: 2px solid black;
-  margin-top: 50px;
-  width: 1350px;
-  margin-left: 250px;
-  border-radius: 20px;
-  box-shadow: 0 0 8px gray;
+  margin: 50px auto 0;
+  width: min(1100px, calc(100% - 30px));
+  min-height: 900px;
+  padding: 30px 24px 32px;
+  border: 2px solid #2f2f2f;
+  border-radius: 18px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.06);
 }
+
 .inventory h2 {
-  font-size: 60px;
+  margin: 0;
+  font-size: 52px;
   font-family: "Libertinus Serif", serif;
-  font-weight: 400;
-  font-style: normal;
   font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  text-align: left;
 }
-li {
-  list-style: none;
-}
-ul {
+
+.i_items {
   display: flex;
-  gap: 80px;
-  font-size: 18px;
-  padding-top: 50px;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0 26px;
 }
-a {
-  text-decoration: none;
-  background: white;
-  padding: 10px;
+
+.filter-btn {
+  appearance: none;
+  border: 2px solid #2d2d2d;
   border-radius: 10px;
-  border: 2px solid rgb(82, 56, 34);
-  width: 150px;
-  height: 50px;
-  text-align: center;
-  font-weight: 700;
-  color: black;
-  font-size: 15px;
-  color: white;
-  font-weight: 700;
-  padding: 10px;
-  font-size: 20px;
-  color: black;
-  box-shadow: 0 0 8px gray;
+  background: #f5f1ea;
+  color: #1e221d;
   font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px 14px;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
-.all {
-  padding: 10px;
-  border-radius: 10px;
-  border: 2px solid black;
-  background: rgb(31, 43, 32);
-  width: 150px;
-  height: 50px;
-  text-align: center;
+
+.filter-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.filter-btn.active {
+  background: #1d2d24;
+  border-color: #1d2d24;
+  color: #ffffff;
+}
+
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 18px 18px;
+}
+
+.inventory-card {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 14px 12px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.inventory-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.expiry-badge {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid rgba(84, 94, 62, 0.9);
+  background: rgba(255, 255, 255, 0.2);
+  color: #4a5e3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
   font-weight: 700;
-  color: black;
-  font-size: 15px;
-  color: white;
-  font-weight: 700;
-  padding: 15px;
-  font-size: 20px;
   font-family: "Courier New", Courier, monospace;
+  line-height: 1;
+}
+
+.expired-badge {
+  border-color: rgba(184, 79, 46, 0.9);
+  color: #b14b39;
+  background: rgba(176, 89, 63, 0.08);
+}
+
+.item-info {
+  min-width: 0;
+}
+
+.item-info h3 {
+  margin: 0 0 4px;
+  font-size: 22px;
+  line-height: 1.2;
+  font-family: "Libertinus Serif", serif;
+  font-weight: 700;
+  color: #1e1e1e;
+}
+
+.quantity {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-family: "Courier New", Courier, monospace;
+  color: #1d1d1d;
+}
+
+.category {
+  display: inline-block;
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 8px;
+}
+
+.category.produce {
+  background: rgba(109, 152, 92, 0.09);
+  border-color: rgba(94, 129, 78, 0.7);
+  color: #447043;
+}
+
+.category.dairy {
+  background: rgba(106, 144, 181, 0.08);
+  border-color: rgba(92, 123, 163, 0.65);
+  color: #496a8c;
+}
+
+.category.meat {
+  background: rgba(191, 118, 77, 0.08);
+  border-color: rgba(177, 102, 63, 0.7);
+  color: #9b5632;
+}
+
+.status {
+  margin: 0;
+  font-size: 14px;
+  font-family: "Courier New", Courier, monospace;
+  color: #4d584d;
+}
+
+.expired .status {
+  color: #b14b39;
+}
+
+.mark-used {
+  align-self: end;
+  justify-self: end;
+  appearance: none;
+  border: 1px solid #2d2d2d;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #1d1d1d;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.mark-used:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 840px) {
+  .inventory-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .inventory {
+    padding: 22px 14px 20px;
+  }
+
+  .inventory h2 {
+    font-size: 38px;
+  }
+
+  .inventory-card {
+    grid-template-columns: 44px minmax(0, 1fr);
+  }
+
+  .mark-used {
+    grid-column: 2 / 3;
+    justify-self: start;
+    margin-top: 8px;
+  }
 }

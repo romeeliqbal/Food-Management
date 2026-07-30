@@ -50,27 +50,151 @@
         <p class="i_inStock">Expired or overdue</p>
       </div>
     </div>
-    <div class="inventory">
-      <h2>Your Inventory</h2>
-      <div class="i_items">
-        <ul>
-          <li><a href="" class="all">All</a></li>
-          <li><a href="">Product</a></li>
-          <li><a href="">Dairy & eggs</a></li>
-          <li><a href="">Pantry</a></li>
-          <li><a href="">Freezer</a></li>
-          <li><a href="">Mear & fish</a></li>
-        </ul>
+    <section class="inventory" aria-labelledby="inventory-title">
+      <h2 id="inventory-title">Your Inventory</h2>
+
+      <nav class="i_items" aria-label="Inventory categories">
+        <button class="filter-btn active" type="button">All</button>
+        <button class="filter-btn" type="button">Produce</button>
+        <button class="filter-btn" type="button">Dairy &amp; Eggs</button>
+        <button class="filter-btn" type="button">Pantry</button>
+        <button class="filter-btn" type="button">Freezer</button>
+        <button class="filter-btn" type="button">Meat &amp; Fish</button>
+      </nav>
+
+      <div class="inventory-grid" aria-live="polite">
+        <article class="inventory-card expired">
+          <div class="expiry-badge expired-badge">exp</div>
+          <div class="item-info">
+            <h3>Coriander</h3>
+            <p class="quantity">1 bunch</p>
+            <span class="category produce">Produce</span>
+            <p class="status">Expired 1d ago</p>
+          </div>
+          <button class="mark-used" type="button">Mark used</button>
+        </article>
+
+        <article class="inventory-card">
+          <div class="expiry-badge">0d</div>
+          <div class="item-info">
+            <h3>Chicken Breast</h3>
+            <p class="quantity">500 g</p>
+            <span class="category meat">Meat &amp; Fish</span>
+            <p class="status">Use today</p>
+          </div>
+          <button class="mark-used" type="button">Mark used</button>
+        </article>
+
+        <article class="inventory-card">
+          <div class="expiry-badge">1d</div>
+          <div class="item-info">
+            <h3>Baby Spinach</h3>
+            <p class="quantity">150 g</p>
+            <span class="category produce">Produce</span>
+            <p class="status">Use within 1d</p>
+          </div>
+          <button class="mark-used" type="button">Mark used</button>
+        </article>
+
+        <article class="inventory-card">
+          <div class="expiry-badge">1d</div>
+          <div class="item-info">
+            <h3>Salmon Fillet</h3>
+            <p class="quantity">300 g</p>
+            <span class="category meat">Meat &amp; Fish</span>
+            <p class="status">Use within 1d</p>
+          </div>
+          <button class="mark-used" type="button">Mark used</button>
+        </article>
+
+        <article class="inventory-card">
+          <div class="expiry-badge">2d</div>
+          <div class="item-info">
+            <h3>Semi-skimmed Milk</h3>
+            <p class="quantity">1 L</p>
+            <span class="category dairy">Dairy &amp; Eggs</span>
+            <p class="status">Use within 2d</p>
+          </div>
+          <button class="mark-used" type="button">Mark used</button>
+        </article>
+
+        <article class="inventory-card">
+          <div class="expiry-badge">2d</div>
+          <div class="item-info">
+            <h3>Minced Beef</h3>
+            <p class="quantity">400 g</p>
+            <span class="category meat">Meat &amp; Fish</span>
+            <p class="status">Use within 2d</p>
+          </div>
+          <button class="mark-used" type="button">Mark used</button>
+        </article>
+
+        <article class="inventory-card">
+          <div class="expiry-badge">3d</div>
+          <div class="item-info">
+            <h3>Bananas</h3>
+            <p class="quantity">6 pcs</p>
+            <span class="category produce">Produce</span>
+            <p class="status">Use within 3d</p>
+          </div>
+          <button class="mark-used" type="button">Mark used</button>
+        </article>
+
+        <article class="inventory-card">
+          <div class="expiry-badge">3d</div>
+          <div class="item-info">
+            <h3>Paneer</h3>
+            <p class="quantity">200 g</p>
+            <span class="category dairy">Dairy &amp; Eggs</span>
+            <p class="status">Use within 3d</p>
+          </div>
+          <button class="mark-used" type="button">Mark used</button>
+        </article>
+
+        <article class="inventory-card">
+          <div class="expiry-badge">4d</div>
+          <div class="item-info">
+            <h3>Cherry Tomatoes</h3>
+            <p class="quantity">250 g</p>
+            <span class="category produce">Produce</span>
+            <p class="status">Use within 4d</p>
+          </div>
+          <button class="mark-used" type="button">Mark used</button>
+        </article>
+
+        <article class="inventory-card">
+          <div class="expiry-badge">5d</div>
+          <div class="item-info">
+            <h3>Greek Yoghurt</h3>
+            <p class="quantity">500 g</p>
+            <span class="category dairy">Dairy &amp; Eggs</span>
+            <p class="status">Use within 5d</p>
+          </div>
+          <button class="mark-used" type="button">Mark used</button>
+        </article>
+
+        <article class="inventory-card">
+          <div class="expiry-badge">5d</div>
+          <div class="item-info">
+            <h3>Cucumber</h3>
+            <p class="quantity">2 pcs</p>
+            <span class="category produce">Produce</span>
+            <p class="status">Use within 5d</p>
+          </div>
+          <button class="mark-used" type="button">Mark used</button>
+        </article>
+
+        <article class="inventory-card">
+          <div class="expiry-badge">6d</div>
+          <div class="item-info">
+            <h3>Cheddar Cheese</h3>
+            <p class="quantity">180 g</p>
+            <span class="category dairy">Dairy &amp; Eggs</span>
+            <p class="status">Use within 6d</p>
+          </div>
+          <button class="mark-used" type="button">Mark used</button>
+        </article>
       </div>
-      <div class="inventory_items">
-        <div class="item_1">
-          <div class="exp">exp</div>
-        </div>
-        <div class="info">Coriander</div>
-        <p>1 bunch</p>
-        <p>produce</p>
-        <p>Expired 1d ago</p>
-      </div>
-    </div>
+    </section>
   </body>
 </html>
